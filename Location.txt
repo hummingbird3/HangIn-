@@ -1,0 +1,4 @@
+Program will include a GPS and an implemented map system. App users will use that map (i.e., main campus map)
+for meeting easily. "Nearby" section will use the GPS and map to show the nearby events in application.
+A user will select the post-it on the mini map and see the details of the event. Right now, we consider having different
+maps for different sections (i.e., east/main campus, Bilkent Center, etc.)
