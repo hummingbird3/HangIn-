@@ -1,0 +1,11 @@
+/**
+ * A simple Java class!
+ */
+public class LectureBuildings extends Buildings
+   // properties
+
+   // constructors
+   
+   // methods
+
+}

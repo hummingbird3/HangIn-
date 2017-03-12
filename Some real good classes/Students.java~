@@ -1,0 +1,12 @@
+/**
+ * A simple Java class!
+ */
+public class Students extends People
+{
+   // properties
+
+   // constructors
+   
+   // methods
+
+}

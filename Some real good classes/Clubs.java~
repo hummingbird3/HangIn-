@@ -1,0 +1,20 @@
+/**
+ * A simple Java class!
+ */
+public class Clubs
+{
+   // properties
+   
+   String Name;
+   ArrayList<String> socialMedia; // like INSTA= @bilkentedt Snap: etc etc.
+   ArrayList<People> members;
+   ArrayList<People> coordinators;
+   ArrayList<Locations> clubLocations;
+   ArrayList<Cards> posted;
+   ArrayList<Cards> accepted;
+
+   // constructors
+   
+   // methods
+
+}

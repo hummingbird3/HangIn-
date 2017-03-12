@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20160913-225446">
+  <project autorefresh="false" main="" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="Coordinates.java" package="" timestamp="12-Mar-2017 23:27:42">
+        <select from="282" to="182"/>
+        <scroll column="0" row="6"/>
+      </file>
+      <file name="Locations.java" package="" timestamp="12-Mar-2017 23:48:42">
+        <select from="282" to="182"/>
+        <scroll column="0" row="6"/>
+      </file>
+      <file name="Schedule.java" package="" timestamp="13-Mar-2017 00:22:49">
+        <select from="282" to="182"/>
+        <scroll column="0" row="6"/>
+      </file>
+      <file name="UniClass.java" package="" timestamp="13-Mar-2017 00:26:07">
+        <select from="282" to="182"/>
+        <scroll column="0" row="6"/>
+      </file>
+      <file name="Buildings.java" package="" timestamp="13-Mar-2017 00:35:15">
+        <select from="282" to="182"/>
+        <scroll column="0" row="6"/>
+      </file>
+      <file name="Boards.java" package="" timestamp="13-Mar-2017 00:37:00">
+        <select from="282" to="182"/>
+        <scroll column="0" row="6"/>
+      </file>
+      <file name="Time.java" package="" timestamp="13-Mar-2017 00:37:56">
+        <select from="282" to="182"/>
+        <scroll column="0" row="6"/>
+      </file>
+      <file name="Cards.java" package="" timestamp="13-Mar-2017 00:45:19">
+        <select from="282" to="182"/>
+        <scroll column="0" row="6"/>
+      </file>
+      <file name="Clubs.java" package="" timestamp="13-Mar-2017 00:47:42">
+        <select from="282" to="182"/>
+        <scroll column="0" row="6"/>
+      </file>
+      <file name="Srs.java" package="" timestamp="13-Mar-2017 01:00:13">
+        <select from="282" to="182"/>
+        <scroll column="0" row="6"/>
+      </file>
+      <file name="People.java" package="" timestamp="13-Mar-2017 01:01:20">
+        <select from="282" to="182"/>
+        <scroll column="0" row="6"/>
+      </file>
+      <file name="Students.java" package="" timestamp="13-Mar-2017 01:02:43">
+        <select from="282" to="182"/>
+        <scroll column="0" row="6"/>
+      </file>
+      <file name="Settings.java" package="" timestamp="13-Mar-2017 01:04:03">
+        <select from="282" to="182"/>
+        <scroll column="0" row="6"/>
+      </file>
+      <file name="Extras.java" package="" timestamp="13-Mar-2017 01:04:03">
+        <select from="282" to="182"/>
+        <scroll column="0" row="6"/>
+      </file>
+      <file name="Menus.java" package="" timestamp="13-Mar-2017 01:04:03">
+        <select from="282" to="182"/>
+        <scroll column="0" row="6"/>
+      </file>
+      <file name="LectureBuildings.java" package="" timestamp="13-Mar-2017 01:05:31">
+        <select from="282" to="182"/>
+        <scroll column="0" row="6"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath/>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>
