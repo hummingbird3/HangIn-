@@ -14,7 +14,7 @@ public class Card {
     ArrayList<Person> hangingPeople;
     int numComing;
     ArrayList<Person> comingPeople;
-    boolean privat;
+    boolean privateAccount;
     Group visibleGroups;
 
 
