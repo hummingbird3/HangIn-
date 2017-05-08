@@ -8,8 +8,9 @@ public class Card {
 	private String cardID;
 	private Person poster;
 	private String posterName;
-	private Time time;
-	private Time timePosted;
+	private Moment time;
+	private TimeScale duration;
+	private Moment timePosted;
 	private Area location;
 	private int numHanging;
 	private ArrayList<Person> hangingPeople;
@@ -64,6 +65,10 @@ public class Card {
 				str = str + ", ";
 			}
 		}
+		str = str + "\n";
+		if ( duration != null ){
+			str = str + "Duration: " + getDuration() + "\n";
+		}
 		return str;
 	}
 
@@ -75,7 +80,7 @@ public class Card {
 		posterName = p.getUsername();
 		p.postCard(this);
 	}
-	public void setTime( Time t ) {
+	public void setTime( Moment t ) {
 		time = t;
 	}
 	public void setLocation( Area a ) {
@@ -112,6 +117,9 @@ public class Card {
 	public void setYi( int i ) {
 		yi = i;
 	}
+	public void setDuration( Moment t){
+		duration = new TimeScale(time, t);
+	}
 
 	public String getCardID(){
 		return cardID;
@@ -145,6 +153,14 @@ public class Card {
 	}
 	public boolean isPrivate() {
 		return privat;
+	}
+	public String getDuration(){
+		if ( duration != null){
+			return duration.toString();
+		}
+		else{
+			return null;
+		}
 	}
 	public int getXi() {
 		return xi;
