@@ -20,6 +20,6 @@
         android:measureAllChildren="false"
         app:itemIconTint="@color/colorPrimaryDark"
         app:itemTextColor="@color/colorPrimaryDark"
-        app:menu="@menu/bottomBarItems" />
+        app:menu="@menu/bottom_bar_items" />
 
 </RelativeLayout>
