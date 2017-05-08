@@ -4,7 +4,7 @@ import java.util.GregorianCalendar;
 import java.util.Date;
 
 /**
- * Created by USER1 on 30.04.2017.
+ * Created by Enes Yıldırım on 30.04.2017.
  */
 public class Now extends Moment{
 
