@@ -162,6 +162,9 @@ public class Card {
 			return null;
 		}
 	}
+	public Time getTimePosted(){
+		return timePosted;
+	}
 	public int getXi() {
 		return xi;
 	}
