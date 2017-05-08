@@ -1,3 +1,4 @@
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -5,20 +6,13 @@ import java.util.Date;
  */
 public class Time {
 
-    /*
-    private String name;
+	SimpleDateFormat dateFormat;
+	SimpleDateFormat dateFormat2;
 
-    public Time( String n){
-        name = n;
-    }
+	public Time(){
+		dateFormat = new SimpleDateFormat("HH/mm/ss/dd/MM/yyyy");
+		dateFormat2 = new SimpleDateFormat("dd MMM YYYY HH:mm");
+	}
 
-    public void setName(String n){
-        name = n;
-    }
-    public void getName(){
-        return name;
-    }
-
-    */
 
 }
