@@ -11,4 +11,11 @@ public class Now extends Moment{
 	public Now(){
 		super();
 	}
+
+
+	public String createID(String s){
+		String str = s + dateFormat3.format(calendar.getTime());
+		return str;
+	}
+
 }
