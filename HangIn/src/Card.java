@@ -26,7 +26,7 @@ public class Card {
 	private int width; // for gui
 
 	//CONSTR
-
+	/*
 	public Card(String id, Person p) {
 		poster = p;
 		p.postCard(this);
@@ -43,7 +43,6 @@ public class Card {
 //        length = ; These will be fixed depending on gui
 //        width = ; These will be fixed depending on gui
 	}
-
 	public Card(String id, Person p, boolean b){
 		cardID = id;
 		Now now = new Now();
@@ -65,25 +64,71 @@ public class Card {
 //        length = ; These will be fixed depending on gui
 //        width = ; These will be fixed depending on gui
 	}
-
+	*/
+	public Card(Person p) {
+		poster = p;
+		p.postCard(this);
+		Now noa =  new Now();
+		cardID = noa.createID("Ca");
+		posterName = poster.getUsername();
+		text = "";
+		textLimit = 50;
+		Now now = new Now();
+		timePosted = now;
+		time = null;
+		hangingPeople = new ArrayList<Person>();
+		comingPeople = new ArrayList<Person>();
+		visibleGroups = new ArrayList<Group>();
+//        length = ; These will be fixed depending on gui
+//        width = ; These will be fixed depending on gui
+	}
+	public Card(Person p, boolean b){
+		Now noa =  new Now();
+		cardID = noa.createID("Ca");
+		Now now = new Now();
+		time = null;
+		timePosted = now;
+		text = "";
+		textLimit = 50;
+		hangingPeople = new ArrayList<Person>();
+		comingPeople = new ArrayList<Person>();
+		visibleGroups = new ArrayList<Group>();
+		if ( b) {
+			privat = true;
+		}
+		else{
+			poster = p;
+			p.postCard(this);
+			posterName = poster.getUsername();
+		}
+//        length = ; These will be fixed depending on gui
+//        width = ; These will be fixed depending on gui
+	}
 	//METHODS
 
 	public String toString() {
 		isDone();
-		String str = "";
-		str = str + "CardID: " + cardID + "\n" + "PosterID: " + poster.getPosterID() + "\n" + "Poster's username: " + posterName + "\n" + "Time: " + time.toString() + "\n";
+		String str = "------------------CARD------------------" + "\n";
+		str = str + "CardID: " + cardID + "\n" + "Text: " + text + "\n" + "PosterID: " + poster.getPersonID() + "\n" + "Poster's username: " + posterName + "\n";
+		str = str + "Time: " + time.toString() + "\n";
 		str = str + "Location: " + location.toString() + "\n" + "Number of hanging: " + numHanging + "\n" + "Number of coming: " + numComing + "\n" + "Private: " + privat + "\n";
 		str = str + "Visible groups: ";
-		for ( int i = 0; i < visibleGroups.size(); i++) {
-			str = str + visibleGroups.get(i).getName();
-			if ( i != visibleGroups.size()-1 ){
-				str = str + ", ";
+		if ( visibleGroups.size() == 0 ){
+			str = str + "everyone";
+		}
+		else {
+			for (int i = 0; i < visibleGroups.size(); i++) {
+				str = str + visibleGroups.get(i).getName();
+				if (i != visibleGroups.size() - 1) {
+					str = str + ", ";
+				}
 			}
 		}
 		str = str + "\n";
 		if ( duration != null ){
 			str = str + "Duration: " + getDuration() + "\n";
 		}
+		str = str + "------------------CARD------------------" + "\n" + "\n";
 		return str;
 	}
 	public void setText( String s){
@@ -143,6 +188,9 @@ public class Card {
 		duration = new TimeScale(time, t);
 	}
 
+	public String getText(){
+		return text;
+	}
 	public String getCardID(){
 		return cardID;
 	}
