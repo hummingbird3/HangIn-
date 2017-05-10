@@ -1,7 +1,9 @@
+/**
+ * Created by Enes Yıldırım, Burak Korkmaz on 30.04.2017.
+ */
 import java.util.ArrayList;
-import java.io.Serializable;
 
-public class Person implements Serializable
+public class Person
 {
 
     //properties
@@ -17,7 +19,6 @@ public class Person implements Serializable
     private int numAccepted;
     private ArrayList<Card> attendedCards;
     private int numAttended;
-    private FileSystem personData = new FileSystem();
 
     //CONTR
 
@@ -38,7 +39,7 @@ public class Person implements Serializable
         numAccepted = 0;
         //attendedCards = null;
         numAttended = 0;
-        personData.inputPerson(this);
+
     }
     //builds a Person with a name, a surname and a username
     public Person(String id, String name, String surname, String uname) {
@@ -57,7 +58,6 @@ public class Person implements Serializable
         numAccepted = 0;
         //attendedCards = null;
         numAttended = 0;
-        personData.inputPerson(this);
     }
 
     //METHODS
@@ -95,14 +95,25 @@ public class Person implements Serializable
     }
 
     public void postCard(Card x) {
-        postedCards.add(x);
-        numPosted = postedCards.size();
+        boolean alreadyPosted = false;
+        for ( Card c : postedCards ){
+            if (c.getCardID().equals(x.getCardID())){
+                alreadyPosted = true;
+                System.out.println("!!!already posted the card: " + x.getCardID() + "\n");
+            }
+        }
+        if ( alreadyPosted == false) {
+            postedCards.add(x);
+            acceptedCards.add(x);
+            numPosted = postedCards.size();
+            numAccepted = acceptedCards.size();
+        }
     }
     public void removePostedCard(Card x){
         postedCards.remove(x);
         numPosted = postedCards.size();
     }
-    public void AcceptCard(Card x) {
+    public void acceptCard(Card x) {
         acceptedCards.add(x);
         numAccepted = acceptedCards.size();
     }
@@ -148,7 +159,7 @@ public class Person implements Serializable
     {
         return username;
     }
-    public void setUsername(String surname)
+    public void setUsername(String username)
     {
         this.username = username;
     }
@@ -172,9 +183,9 @@ public class Person implements Serializable
     {
         return verified;
     }
-    public void setVerified(boolean verrified)
+    public void setVerified(boolean b)
     {
-        this.verified = verified;
+        verified = b;
     }
     public ArrayList<Card> getAttendedCards()
     {
