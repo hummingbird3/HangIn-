@@ -8,10 +8,12 @@ public class Time {
 
 	SimpleDateFormat dateFormat;
 	SimpleDateFormat dateFormat2;
+	SimpleDateFormat dateFormat3;
 
 	public Time(){
 		dateFormat = new SimpleDateFormat("HH/mm/ss/dd/MM/yyyy");
 		dateFormat2 = new SimpleDateFormat("dd MMM YYYY HH:mm");
+		dateFormat3 = new SimpleDateFormat("YYYYMMddHHmmss");
 	}
 
 
