@@ -19,10 +19,10 @@ public class Person
     private int numAccepted;
     private ArrayList<Card> attendedCards;
     private int numAttended;
+    private ArrayList<Group> groups;
 
     //CONTR
-
-    //builds a Person with a name and a surname
+    /*
     public Person(String id, String name, String surname) {
         postedCards = new ArrayList<Card>();
         acceptedCards = new ArrayList<Card>();
@@ -39,9 +39,8 @@ public class Person
         numAccepted = 0;
         //attendedCards = null;
         numAttended = 0;
-
+        groups = new ArrayList<Group>();
     }
-    //builds a Person with a name, a surname and a username
     public Person(String id, String name, String surname, String uname) {
         postedCards = new ArrayList<Card>();
         acceptedCards = new ArrayList<Card>();
@@ -58,12 +57,53 @@ public class Person
         numAccepted = 0;
         //attendedCards = null;
         numAttended = 0;
+        groups = new ArrayList<Group>();
+    }
+    */
+    public Person(String name, String surname, String uname) {
+        postedCards = new ArrayList<Card>();
+        acceptedCards = new ArrayList<Card>();
+        attendedCards = new ArrayList<Card>();
+        Now noa =  new Now();
+        personID = noa.createID("Pe");
+        this.name = name;
+        this.surname = surname;
+        this.username = uname;
+        verified = false;
+        privateAccount = true;
+        //postedCards = null;
+        numPosted = 0;
+        //acceptedCards = null;
+        numAccepted = 0;
+        //attendedCards = null;
+        numAttended = 0;
+        groups = new ArrayList<Group>();
+    }
+
+    public Person(String name, String surname) {
+        postedCards = new ArrayList<Card>();
+        acceptedCards = new ArrayList<Card>();
+        attendedCards = new ArrayList<Card>();
+        Now noa =  new Now();
+        personID = noa.createID("Pe");
+        this.name = name;
+        this.surname = surname;
+        username = name + " " + surname;
+        verified = false;
+        privateAccount = false;
+        //postedCards = null;
+        numPosted = 0;
+        //acceptedCards = null;
+        numAccepted = 0;
+        //attendedCards = null;
+        numAttended = 0;
+        groups = new ArrayList<Group>();
     }
 
     //METHODS
 
     public String toString(){
-        String str = "";
+        String str = "------------------PERSON----------------" + "\n";
         str = str + "PersonID: " + personID + "\n" + "Name: " + name + "\n" + "Surname: " + surname + "\n" + "Username: " + username + "\n";
         str = str + "Verified: " + verified + "\n" + "Private account: " + privateAccount + "\n";
         str = str + "Number of posted: " + numPosted + "\n" + "Number of accepted: " + numAccepted + "\n" + "Number of attended: " + numAttended + "\n";
@@ -91,6 +131,15 @@ public class Person
             }
         }
         str = str + "\n";
+        str = str + "Groups: ";
+        for ( int i = 0; i < groups.size(); i++) {
+            str = str + groups.get(i).getGroupID() + "[" + groups.get(i).getName() + "]";
+            if ( i != groups.size()-1 ){
+                str = str + ", ";
+            }
+        }
+        str = str + "\n";
+        str = str + "------------------PERSON----------------" + "\n" + "\n";
         return str;
     }
 
@@ -129,10 +178,17 @@ public class Person
         attendedCards.remove(x);
         numAttended = attendedCards.size();
     }
-    public String getPosterID(){
+    public void addGroup(Group g){
+        groups.add(g);
+    }
+    public void removeGroup(Group g){
+        groups.remove(g);
+    }
+
+    public String getPersonID(){
         return personID;
     }
-    public void setPosterID(String s){
+    public void setPersonID(String s){
         personID = s;
     }
     public String getName()
@@ -211,7 +267,7 @@ public class Person
     {
         this.numPosted = numPosted;
     }
-    public int getAcceptedPosted()
+    public int getNumAccepted()
     {
         return numAccepted;
     }
