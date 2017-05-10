@@ -14,6 +14,14 @@ public class Place {
     
   }
   
+  public void addPostedCards(Card x){
+    postedCards.add(x);
+  }
+  
+  public void removePostedCards(Card x){
+    postedCards.remove();postedCards.remove(posted.indexOf(x));
+  }
+  
   public int getSector(){
     return sector;
   }
