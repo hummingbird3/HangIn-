@@ -10,14 +10,17 @@ package hangin;
  *
  * @author egehatirnaz
  */
-import java.awt.event.*;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
 import javax.swing.JPanel;
-import java.awt.Dimension;
+import javax.swing.JFrame;
 
 public class MapGridPanel extends JPanel{
    //properties
    private MapGrid canvas;
    private MouseListener myMouseListener;
+   private int clickedRow;
+   private int clickedCol;
    
    
    
@@ -25,7 +28,9 @@ public class MapGridPanel extends JPanel{
    MapGridPanel(){
       super();
       
-      canvas = new MapGrid(40,1,1);
+      clickedRow = -1;
+      clickedCol = -1;
+      canvas = new MapGrid(3);
       myMouseListener = new MyMouseListener();
       canvas.addMouseListener(myMouseListener);
       
@@ -33,7 +38,33 @@ public class MapGridPanel extends JPanel{
    }
    
    //methods
-   
+   public static void main(String[] args){
+      
+        MapGridPanel mapGridPanel = new MapGridPanel();
+        
+      JFrame frame = new JFrame();
+      
+      
+      frame.add(mapGridPanel);
+      frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+      frame.pack();
+      frame.setVisible(true);
+      
+    }
+   /**
+    * getClickedRow method returns the last pressed row
+    * @return clickedRow
+    */
+   public int getClickedRow(){
+    return clickedRow;
+}
+   /**
+    * getClickedCol method returns the last pressed col
+    * @return clickedCol
+    */
+   public int getClickedCol(){
+    return clickedCol;
+}
    /**
     * MyMouseListener class
     * @author Ege "Aegis" Hatırnaz
@@ -53,9 +84,12 @@ public class MapGridPanel extends JPanel{
                row = (e.getY() / canvas.getUnitHeight()) + 1;
                column = (e.getX() / canvas.getUnitWidth()) +1;
                //do something
-               System.out.println("kek. (row,col) "+ row + "," + column);
+               clickedRow = row;
+               clickedCol = column;
+               System.out.println("kek. (row,col) "+ clickedRow + "," + clickedCol + "\n(x,y): " + e.getX() + "," + e.getY());
             }
          }
+         canvas.showOnMap(e.getX()- 12 , e.getY() - 12);
          canvas.repaint();
          repaint();
          
