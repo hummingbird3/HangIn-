@@ -7,10 +7,22 @@ import java.util.ArrayList;
 public class Board {
 
     private String name;
-    ArrayList<Card> postedCards;
+    CardHolder ch;
 
     public Board(){
-        postedCards = new ArrayList<Card>();
+        ch = new CardHolder();
+    }
+
+    public String toString(){
+        return ch.toString();
+    }
+
+    public String toStringNum(){
+        return ch.toStringNum();
+    }
+
+    public CardHolder getCards(){
+        return ch;
     }
 
 
