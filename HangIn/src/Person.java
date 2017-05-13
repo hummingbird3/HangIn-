@@ -78,6 +78,9 @@ public class Person
         //attendedCards = null;
         numAttended = 0;
         groups = new ArrayList<Group>();
+        if ( username.length() > 10 ){
+            username.substring(0, 11);
+        }
     }
 
     public Person(String name, String surname) {
@@ -98,6 +101,9 @@ public class Person
         //attendedCards = null;
         numAttended = 0;
         groups = new ArrayList<Group>();
+        if ( username.length() > 10 ){
+            username.substring(0,11);
+        }
     }
 
     //METHODS
