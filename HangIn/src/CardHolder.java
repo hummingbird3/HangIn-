@@ -17,16 +17,26 @@ public class CardHolder {
 		decimalFormat = new DecimalFormat("0000");
 	}
 
-	public String toString(){
+	public String toStringNum(){
 	 	String str = "---------------ALLCARDS-----------------" + "\n";
 		i = 00000;
 		for ( Card c : allCards ){
 			i++;
-			str = str + i + ")" + " " + c.toStringReadable() + "\n";
+			str = str + i + ")" + "\n" + c.toStringCard() + "\n" + "\n";
 		}
-		str = str + "---------------ALLCARDS-----------------" + "\n" + "\n";
+		str = str + "---------------ALLCARDS-----------------";
 		return str;
 	}
+
+	public String toString(){
+		String str = "---------------ALLCARDS-----------------" + "\n";
+		for ( Card c : allCards ){
+			str = str + "\n" + c.toStringCard() + "\n" + "\n";
+		}
+		str = str + "---------------ALLCARDS-----------------";
+		return str;
+	}
+
 	public void newCard(Person poster, String t, Moment m, Building b){
 		Card x = new Card( poster);
 		x.setText(t);
