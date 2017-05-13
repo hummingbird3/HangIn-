@@ -136,6 +136,15 @@ public class Card {
 		str = str + " | " + getText() + " | " + getPosterName() + " | " + getLocation() + " | " + getTime() + " | " + getNumHanging() + "]";
 		return str;
 	}
+
+	public String toStringCard(){
+		String str = "|*********************************************************************|" + "\n";
+		str = str + "|**                  " + getText() + "\n";
+		str = str +  "|**                  " + getTime() + "\n";
+		str = str + "|** " + "Poster: [" + getPosterName() + "] Location: [" + getLocation() + "] People: [" + getNumHanging() + "]" + "\n";
+		str = str +  "|*********************************************************************|" + "\n";
+		return str;
+	}
 	public void setText( String s){
 		if ( s.length() <= textLimit ) {
 			text = s;
