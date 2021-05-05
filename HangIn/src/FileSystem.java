@@ -7,10 +7,11 @@ import java.util.ArrayList;
 
 public class FileSystem {
    
-   private ArrayList<Card> deserializedCards;
-   private ArrayList<Person> deserializedPerson;
+
    private ArrayList<Card> cards;
    private ArrayList<Person> person;
+   private ArrayList<Card> deserializedCards;
+   private ArrayList<Person> deserializedPerson;
    //Lists of data to draw from
    public FileSystem()
    {
