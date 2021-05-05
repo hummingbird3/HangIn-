@@ -4,13 +4,13 @@ import java.util.ArrayList;
  * Created by USER1 on 30.04.2017.
  */
 public class Card {
-
-	private String cardID;
+	
 	private String text;
 	private int textLimit;
 	private Person poster;
 	private String posterName;
 	private Moment time;
+	private String cardID;
 	private TimeScale duration;
 	private Moment timePosted;
 	private Area location;
